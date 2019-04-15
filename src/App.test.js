@@ -6,6 +6,7 @@ import Foo from './Foo';
 
 //https://facebook.github.io/create-react-app/docs/running-tests
 
+//SHALLOW Render Examples
 
 //smoke test” verifying that a component renders without throwing
 it('renders without crashing', () => {
@@ -42,10 +43,13 @@ it('testing element inside a component', () => {
         //Mock functions are also known as "spies", 
         //because they let you spy on the behavior of a function that is called indirectly by some other code,
         //https://jestjs.io/docs/en/mock-function-api
-        
+
         const onButtonClick = jest.fn();
         const wrapper = shallow(<Foo onButtonClick={onButtonClick} />);
         wrapper.find('button').simulate('click');
         expect(onButtonClick).toHaveBeenCalled();
       });
+
+    
+     
 });
