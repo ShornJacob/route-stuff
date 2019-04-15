@@ -1,15 +1,24 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default function Foo({ onButtonClick, bar }) {
+export default class Foo extends React.Component {
+
+
+    componentDidMount() {
+       
+    }
+
+   render () {
     return (
         <div>
             <div>Foo</div>
 
             {/* https://reactjs.org/docs/handling-events.html */}
-            <button onClick={onButtonClick}>Button</button>
+            <button onClick={this.props.onButtonClick}>Button</button>
 
-            <div>{bar}</div>
+            <div>{this.props.bar}</div>
         </div>
 
     )
+   }
+    
 }

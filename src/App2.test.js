@@ -17,9 +17,25 @@ describe('<Foo />', () => {
     })
 
     it('simulates click events', () => { 
-        const onButtonClick = jest.fn();
-        const wrapper = mount(<Foo onButtonClick={onButtonClick} />);
+        const spy = jest.fn();
+        const wrapper = mount(<Foo onButtonClick={spy} />);
         wrapper.find('button').simulate('click');
-        expect(onButtonClick).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalled();
+      });
+
+      it('calls componentDidMount', () => {
+
+        //https://jestjs.io/docs/en/jest-object.html#jestspyonobject-methodname
+        // only React.Component has lifecycle, not functional stateless components
+        // lifecle methods have to be defined
+
+        const spy = jest.spyOn(Foo.prototype,'componentDidMount');
+        const wrapper = mount(<Foo />);
+        expect(spy).toHaveBeenCalled();
+
+        //https://jestjs.io/docs/en/mock-function-api#mockfnmockclear
+        //Resets all informataion in mock
+        spy.mockClear()
+    
       });
 })
