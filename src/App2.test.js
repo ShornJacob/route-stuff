@@ -15,4 +15,11 @@ describe('<Foo />', () => {
         wrapper.setProps({ bar: 'foo' });
         expect(wrapper.props().bar).toEqual('foo');
     })
+
+    it('simulates click events', () => { 
+        const onButtonClick = jest.fn();
+        const wrapper = mount(<Foo onButtonClick={onButtonClick} />);
+        wrapper.find('button').simulate('click');
+        expect(onButtonClick).toHaveBeenCalled();
+      });
 })
