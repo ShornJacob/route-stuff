@@ -2,7 +2,8 @@ import React from 'react';
 //import { Switch, Route } from 'react-router'
 //import { Link } from 'react-router-dom'
 import Routes from './Routes'
-
+import { shallow } from 'enzyme';
+import { Route } from 'react-router-dom';
 
 
 //https://reacttraining.com/react-router/web/guides/testing
@@ -19,8 +20,20 @@ import Routes from './Routes'
 // }
 
 
+// enzyme This is an assertion library that makes it easier to assert, manipulate, and traverse your React Components’ output.
 
 export default function App() {
+
+
+
+  // let pathMap = component.find(Route).reduce((pathMap, route) => {
+  //   const routeProps = route.props();
+  //   pathMap[routeProps.path] = routeProps.component;
+  //   return pathMap;
+  // }, {});
+
+  // console.log(pathMap)
+
   return (
     <div>
       <Routes/>
