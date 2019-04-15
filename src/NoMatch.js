@@ -6,7 +6,7 @@ export default function NoMatch() {
     <div>
      <Link to="/a" >A page</Link><br/>
      <Link to="/b" >B page</Link><br/>
-     <Link to="/parent" >Parent</Link><br/>
+     <Link to="/foo" >Foo</Link><br/>
     </div>
   )
 }
