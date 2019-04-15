@@ -2,8 +2,8 @@ import React from 'react';
 //import { Switch, Route } from 'react-router'
 //import { Link } from 'react-router-dom'
 import Routes from './Routes'
-import { shallow } from 'enzyme';
-import { Route } from 'react-router-dom';
+
+
 
 
 //https://reacttraining.com/react-router/web/guides/testing
