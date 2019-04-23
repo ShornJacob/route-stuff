@@ -2,7 +2,7 @@ import React from 'react';
 //import { Switch, Route } from 'react-router'
 //import { Link } from 'react-router-dom'
 import Routes from './Routes'
-
+import {BrowserRouter} from 'react-router-dom'
 
 
 
@@ -36,7 +36,9 @@ export default function App() {
 
   return (
     <div>
+      <BrowserRouter/>
       <Routes/>
+      <BrowserRouter/>
     </div>
   )
 }
