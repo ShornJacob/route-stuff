@@ -5,6 +5,7 @@ import { MemoryRouter } from 'react-router'
 import A from './A'
 import B from './B'
 import Routes from './Routes';
+import NoMatch from './NoMatch';
 
 //https://techdoma.in/testing-routes-react-router-dom-in-react-using-jest-2/
 
@@ -38,5 +39,14 @@ describe('routes using memory router', () => {
 
         expect(wrapper.find(A)).toHaveLength(1);
     })
+
+
+    test('should show No match component for route not defined', () => {
+        const wrapper2 = mount( <MemoryRouter initialEntries = {['/unknown']} >
+            <Routes/>
+          </MemoryRouter>
+        );
+        expect(wrapper2.find(NoMatch)).toHaveLength(1);
+      })
 
 })
